@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --radius-3xl: 2rem;
+  --radius-4xl: 2.5rem;
+  
+  --color-accent: #0f172a; /* slate-900 */
+  --color-accent-hover: #000000;
+  --color-accent-soft: #f1f5f9; /* slate-100 */
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+.harkness-bg {
+  background-image: radial-gradient(var(--color-slate-200) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-xl border border-white/20 shadow-2xl shadow-slate-200/50;
+}
+
+.btn-primary {
+  @apply px-8 py-4 bg-accent text-white rounded-2xl font-bold shadow-lg shadow-accent/20 hover:bg-accent-hover hover:-translate-y-0.5 active:translate-y-0 transition-all disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.btn-secondary {
+  @apply px-8 py-4 bg-white text-slate-600 rounded-2xl font-bold border border-slate-200 hover:bg-slate-50 hover:border-slate-300 transition-all;
+}
+
+.input-field {
+  @apply w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-accent focus:border-transparent transition-all outline-none;
+}
